@@ -271,10 +271,10 @@ Move the files to a partition that is **RW by default** and modify:
 httpd.service
 ```
 
-5. Ensure `/etc/data/modem_config.xml` correctly set the following options in:
+5. Ensure `modem_config` correctly set the following options in:
 
 ```
-mobileap_cfg.xml
+/etc/data/mobileap_cfg.xml
 ```
 
 ```
