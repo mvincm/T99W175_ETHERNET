@@ -1,0 +1,15 @@
+#/lib/systemd/system/sshd.service
+[Unit]
+Description=Dropbear Secure Shell server
+After=network.target
+
+[Service]
+Type=simple
+PIDFile=/var/run/dropbear.pid
+ExecStart=/usr/sbin/sshd dropbear -F
+ExecReload=/bin/kill -HUP $MAINPID
+KillMode=process
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
