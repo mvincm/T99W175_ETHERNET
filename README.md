@@ -118,7 +118,7 @@ fastboot reboot
 
 ---
 
-## 6. Flash modem partitions (files from this github repo)
+## 6. Flash modem partitions (see link in firmware catalog to download files)
 
 ```
 fastboot flash modem NON-HLOS.ubi
