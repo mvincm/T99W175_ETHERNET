@@ -189,6 +189,7 @@ adb push modem_config /usr/bin
 adb push httpd.service /lib/systemd/system
 adb push sshd.service /lib/systemd/system
 adb shell 755 /usr/bin/ethtool /usr/bin/jq /usr/bin/curl /usr/bin/atcli_smd8 /usr/bin/atcli /usr/sbin/sshd /usr/bin/modem_config
+adb shell ln -s /usr/sbin/sshd /usr/sbin/dropbear
 adb shell dropbearkey -t rsa -f /etc/dropbear/dropbear_rsa_host_key -s 2048
 adb shell dropbearkey -t ed25519 -f /etc/dropbear/dropbear_ed25519_host_key
 adb shell 600 /etc/dropbear/dropbear_rsa_host_key /etc/dropbear/dropbear_ed25519_host_key
