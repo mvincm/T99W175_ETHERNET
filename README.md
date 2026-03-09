@@ -176,10 +176,10 @@ adb shell mount -o remount,rw /
 
 ---
 
-## 2. Upload required files
+## 2. Upload required files and generate ssh keys
 
 ```
-adb push ethtool /usb/bin
+adb push ethtool /usr/bin
 adb push jq /usr/bin
 adb push curl /usr/bin
 adb push atcli_smd8 /usr/bin
@@ -188,7 +188,10 @@ adb push sshd /usr/sbin
 adb push modem_config /usr/bin
 adb push httpd.service /lib/systemd/system
 adb push sshd.service /lib/systemd/system
-adb shell 755 /usb/bin/ethtool /usr/bin/jq /usr/bin/curl /usr/bin/atcli_smd8 /usr/bin/atcli /usr/sbin/sshd /usr/bin/modem_config
+adb shell 755 /usr/bin/ethtool /usr/bin/jq /usr/bin/curl /usr/bin/atcli_smd8 /usr/bin/atcli /usr/sbin/sshd /usr/bin/modem_config
+adb shell dropbearkey -t rsa -f /etc/dropbear/dropbear_rsa_host_key -s 2048
+adb shell dropbearkey -t ed25519 -f /etc/dropbear/dropbear_ed25519_host_key
+adb shell 600 /etc/dropbear/dropbear_rsa_host_key /etc/dropbear/dropbear_ed25519_host_key
 ```
 
 ---
