@@ -49,9 +49,9 @@ This limitation occurs because **IPA mode (IP Accelerator)** is not available.
 
 Without IPA, the modem simply cannot process higher traffic rates due to CPU limitations.
 
-This behavior is typical for firmware using **Linux kernel 4.4.117**.
+This behavior is typical for firmware using **Linux kernel 4.14.117**.
 
-* **Kernel 4.4.206** includes **IP acceleration support**
+* **Kernel 4.14.206** includes **IP acceleration support**
 * However, that version **does not include unlocked Ethernet over PCIe support**
 
 There is firmware for this modem that supports **both features**, but it is **not publicly available**.
@@ -320,7 +320,7 @@ AT^TEMP?
 
 ## 4. Performance limitation
 
-Due to **kernel 4.4.117**, **IPA acceleration is not available**, therefore maximum throughput is limited to approximately **300 Mbit/s**.
+Due to **kernel 4.14.117**, **IPA acceleration is not available**, therefore maximum throughput is limited to approximately **300 Mbit/s**.
 
 ## 5. Final thoughts
 
