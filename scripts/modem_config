@@ -587,7 +587,8 @@ toggle_bridge() {
         read choice
         if [[ "$choice" =~ ^[Yy]$ ]]; then
             set_xml_value "IPPassthroughEnable" "0" "$CONFIG_FILE"
-            set_xml_value "IPPassthroughHostMAC" "0" "$CONFIG_FILE"
+            set_xml_value "IPPassthroughMacAddr" "0" "$CONFIG_FILE"
+            set_xml_value "IPPassthroughHostName" "0" "$CONFIG_FILE"
             echo -e "Bridge Mode "$(colorize "DISABLED" red)""
             echo " "
             echo -e "$(colorize "WARNING" yellow)"": Reboot the module to apply changes"
@@ -603,6 +604,8 @@ toggle_bridge() {
                 [[ "$mac_addr" =~ ^[Qq]$ ]] && return 0
                 if validate_netval "$mac_addr" mac; then
                     set_xml_value "IPPassthroughEnable" "1" "$CONFIG_FILE"
+                    set_xml_value "IPPassthroughDeviceType" "ETH" "$CONFIG_FILE"
+                    set_xml_value "IPPassthroughHostName" "0" "$CONFIG_FILE"
                     set_xml_value "IPPassthroughMacAddr" "$mac_addr" "$CONFIG_FILE"
                     echo -e "Bridge Mode "$(colorize "ENABLED" green)" with MAC: $(colorize "$mac_addr" white)"
                     echo " "
