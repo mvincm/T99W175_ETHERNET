@@ -193,7 +193,7 @@ adb shell ln -s /usr/sbin/sshd /usr/sbin/dropbearkey
 adb shell mkdir /etc/dropbear
 adb shell dropbearkey -t rsa -f /etc/dropbear/dropbear_rsa_host_key -s 2048
 adb shell dropbearkey -t ed25519 -f /etc/dropbear/dropbear_ed25519_host_key
-adb shell 600 /etc/dropbear/dropbear_rsa_host_key /etc/dropbear/dropbear_ed25519_host_key
+adb shell chmod 600 /etc/dropbear/dropbear_rsa_host_key /etc/dropbear/dropbear_ed25519_host_key
 ```
 
 ---
