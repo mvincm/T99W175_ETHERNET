@@ -1,0 +1,5 @@
+ota.bin
+https://mega.nz/file/zUoUxJbD#hEPa1YUqwq9DY2RT-wQpGM86ZnMAYmp-rez38Lsjyxg
+
+ota_ipa_boot.img
+https://mega.nz/file/SVJTWAbK#7AALutD1tDuxn-RiGZ4h3407kTlKIWbg4Xw_RJFqnL4
