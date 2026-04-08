@@ -32,7 +32,9 @@ In short: the modem is known to be working properly.
 
 ---
 
-# How did I manage to enable PCIe and other features? Here is a brief summary — not a detailed description — and I am open to sharing the full journey with anyone interested.
+# How did I manage to enable PCIe and other features? 
+
+Here is a brief summary (not a detailed description) and I am open to sharing the full journey with anyone interested.
 
 1. I started by flashing the official Dell firmware F0.1.0.0.9.GC.004 to establish a common baseline that anyone can replicate.
 2. I then flashed the latest firmware version I could find online: 6.0.0.6, with kernel 4.14.206.
@@ -72,13 +74,9 @@ F0.1.0.0.9.GC.004
 
 The tool can be downloaded from the Dell support page. The aim is to start from the same baseline.
 
----
-
 ## 2. Flash ota.bin firmware (6.0.0.6, kernel 4.14.206) and reboot the modem
 
 Use the same tool from Dell, but place `ota.bin` in the folder where `QDUTool.exe` is located and run `QDUTool.exe`. This should flash `ota.bin` to your modem.
-
----
 
 ## 3. Reboot the modem into fastboot mode
 
@@ -86,21 +84,15 @@ Use the same tool from Dell, but place `ota.bin` in the folder where `QDUTool.ex
 adb reboot-bootloader
 ```
 
----
-
 ## 4. Boot using ota_ipa_boot.img (without flashing first, to verify it works)
 
 ```
 fastboot boot ota_ipa_boot.img
 ```
 
----
-
 ## 5. Verify that everything works correctly
 
 Perform basic checks and confirm the modem boots correctly and that PCIe, Ethernet, etc. are working. If everything works, proceed to the next step.
-
----
 
 ## 6. Erase the partitions
 
@@ -109,17 +101,12 @@ adb reboot-bootloader
 fastboot erase boot
 ```
 
----
-
 ## 7. Flash ota_ipa_boot.img permanently
 
 ```
 fastboot flash boot ota_ipa_boot.img
 ```
-
 Reboot the modem afterward.
-
----
 
 ## 8. Enjoy T99W175 with Ethernet and IPA enabled!
 
@@ -144,6 +131,6 @@ t99w175_size.py
 t99w175_trunc.py
 ```
 
-Links to ota.bin, ota_ipa_boot.img, python files are in `links.txt` file.
+Links to ota.bin, ota_ipa_boot.img are in `links.txt` file.
 
 ---
