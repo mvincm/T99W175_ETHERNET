@@ -37,7 +37,7 @@ In short: the modem is known to be working properly.
 Here is a brief summary (not a detailed description) and I am open to sharing the full journey with anyone interested.
 
 1. I started by flashing the official Dell firmware F0.1.0.0.9.GC.004 to establish a common baseline that anyone can replicate.
-2. I then flashed the latest firmware version I could find online: 6.0.0.6, with kernel 4.14.206.
+2. I then flashed the latest firmware version I could find online: 6.0.0.6 rev 056, with kernel 4.14.206.
 3. This version includes the r8125.ko module, and the kernel is able to load it without errors.
 4. This version also includes a systemd script that loads the module at boot.
 5. I therefore assumed that the "only" limitation was the lack of PCIe bus support, through which the kernel would detect the r8125 chipset on my adapter.
